@@ -21,6 +21,10 @@ export async function GET(request: Request) {
         skip: skip,
     });
 
+    if(todos.length === 0) {
+        return NextResponse.json({ message: 'There are no TODOS in the database'}, { status: 404 })
+    }
+
     return NextResponse.json(todos);
 }
 
@@ -41,4 +45,24 @@ export async function POST(request: Request) {
         return NextResponse.json(error, {status: 400});
     };
 
+}
+
+export async function deleteAllTodos() {
+    try {
+        const result = await prisma.todo.deleteMany({});
+        return result;
+    } catch (error) {
+        console.error('Error deleting todos:', error);
+        throw error;
+    }
+}
+
+export async function DELETE(request: NextRequest) {
+    try {
+        const result = await deleteAllTodos();
+        return NextResponse.json({ message: 'All todos deleted successfully', result });
+    } catch (error) {
+        console.error('Error in DELETE endpoint:', error);
+        return NextResponse.json({ message: 'Internal server error' }, { status: 500 });
+    }
 }
