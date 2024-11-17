@@ -1,3 +1,15 @@
+# Welcome!
+
+This is a project to test and practice Next.js 14 features for learning purposes. 
+
+Technologies used:
+
+- Next.js 14
+- Typescript
+- Prisma
+- TailwindCSS
+- Docker
+
 # Development
 
 Steps to run development environment:
