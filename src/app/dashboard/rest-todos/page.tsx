@@ -1,5 +1,8 @@
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 import prisma from "@/lib/prisma";
-import { TodosGrid } from "@/todos";
+import { NewTodo, TodosGrid } from "@/todos";
 
 export const metadata = {
  title: 'TODO List',
@@ -12,7 +15,9 @@ export default async function RestTodosPage() {
 
   return (
     <div>
-      {/* TODO: form to add todos */}
+      <div className="w-full px-3 mx-5 mb-5">
+        <NewTodo />
+      </div>
       <TodosGrid todos={todos}/>
     </div>
   );

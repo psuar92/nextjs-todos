@@ -47,22 +47,15 @@ export async function POST(request: Request) {
 
 }
 
-export async function deleteAllTodos() {
-    try {
-        const result = await prisma.todo.deleteMany({});
-        return result;
-    } catch (error) {
-        console.error('Error deleting todos:', error);
-        throw error;
-    }
-}
-
 export async function DELETE(request: NextRequest) {
     try {
-        const result = await deleteAllTodos();
-        return NextResponse.json({ message: 'All todos deleted successfully', result });
+        const result = await prisma.todo.deleteMany({
+            where: {
+                complete: true
+            }
+        });
+        return NextResponse.json({ message: 'All completed todos deleted successfully', result });
     } catch (error) {
-        console.error('Error in DELETE endpoint:', error);
         return NextResponse.json({ message: 'Internal server error' }, { status: 500 });
     }
 }
