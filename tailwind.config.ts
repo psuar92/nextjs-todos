@@ -5,7 +5,7 @@ const config: Config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/todos/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -15,6 +15,11 @@ const config: Config = {
       },
     },
   },
+  safelist: [
+    {
+      pattern: /grid-cols-\b([1-9]|1[0-2])\b/g,
+    },
+  ],
   plugins: [],
 };
 export default config;
