@@ -23,6 +23,7 @@ docker compose up -d
 4. Run command ```npm install```
 5. Run command ```npm run dev```
 4. Run SEED to [create local database](localhost:3000/api/seed)
+6. Run command ```npx auth secret``` to generate a random token for NextAuth in the .env.local file, paste it to the .env file
 
 # Prisma commands
 ```

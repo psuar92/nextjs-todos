@@ -8,10 +8,11 @@ const nextConfig = {
             },
             {
                 protocol: 'https',
-                hostname: 'raw.githubusercontent.com'
+                hostname: 'avatars.githubusercontent.com'
             }
         ]
     }
 };
+
 
 export default nextConfig;
