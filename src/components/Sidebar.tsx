@@ -6,27 +6,27 @@ import { IoBasketOutline, IoCalendarOutline, IoCheckboxOutline, IoCodeWorkingOut
 
 const menuItem = [
     {
-        icon: <IoCalendarOutline />,
+        icon: <IoCalendarOutline size={20}/>,
         title: 'Dashboard',
         path: '/dashboard',
     },
     {
-        icon: <IoCheckboxOutline />,
+        icon: <IoCheckboxOutline size={20}/>,
         title: 'Rest TODOS',
         path: '/dashboard/rest-todos',
     },
     {
-        icon: <IoListOutline />,
+        icon: <IoListOutline size={20}/>,
         title: 'Server Actions',
         path: '/dashboard/server-todos',
     },
     {
-        icon: <IoCodeWorkingOutline />,
+        icon: <IoCodeWorkingOutline size={20}/>,
         title: 'Cookies',
         path: '/dashboard/cookies',
     },
     {
-        icon: <IoBasketOutline />,
+        icon: <IoBasketOutline size={20}/>,
         title: 'Products',
         path: '/dashboard/products',
     },
