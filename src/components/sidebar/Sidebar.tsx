@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { CiLogout } from "react-icons/ci"
-import { SidebarItem } from "@/components"
+import { LogoutButton, SidebarItem } from "@/components"
 import { IoBasketOutline, IoCalendarOutline, IoCheckboxOutline, IoCodeWorkingOutline, IoListOutline, IoPersonOutline } from "react-icons/io5"
 import { getServerSession } from "next-auth"
 import { authOptions } from "@/app/api/auth/[...nextauth]/route"
@@ -47,7 +47,7 @@ export const Sidebar = async () => {
 
     const avatarUrl = (session?.user?.image) ? session.user.image : '/profile_pic.png';
 
-    // TODO: userRole
+    const userRoles = session?.user?.roles ?? ['user'];
 
     return (
         <>
@@ -70,7 +70,7 @@ export const Sidebar = async () => {
                             height={650}
                             className="w-10 h-10 m-auto rounded-full object-cover lg:w-28 lg:h-28" />
                         <h5 className="hidden mt-4 text-xl font-semibold text-gray-600 lg:block">{userName}</h5>
-                        <span className="hidden text-gray-400 lg:block">Admin</span>
+                        <span className="hidden text-gray-400 lg:block capitalize">{userRoles.join(', ')}</span>
                     </div>
 
                     <ul className="space-y-2 tracking-wide mt-8">
@@ -84,10 +84,7 @@ export const Sidebar = async () => {
                 </div>
 
                 <div className="px-6 -mx-6 pt-4 flex justify-between items-center border-t">
-                    <button className="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group">
-                        <CiLogout />
-                        <span className="group-hover:text-gray-700">Logout</span>
-                    </button>
+                    <LogoutButton />
                 </div>
             </aside>
         </>
