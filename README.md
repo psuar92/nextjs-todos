@@ -8,6 +8,7 @@ Technologies used:
 - Typescript
 - Prisma
 - TailwindCSS
+- PostgreSQL
 - Docker
 
 # Development
@@ -25,14 +26,18 @@ docker compose up -d
 4. Run SEED to [create local database](localhost:3000/api/seed)
 6. Run command ```npx auth secret``` to generate a random token for NextAuth in the .env.local file, paste it to the .env file
 
+## Note:
+
+Default user for login
+
+
+__email:__ test1@mail.com
+
+__password:__ 123456
+
 # Prisma commands
 ```
 npx prisma init
 npx prisma migrate dev
 npx prisma generate
 ```
-
-# Production
-
-
-# Stage
