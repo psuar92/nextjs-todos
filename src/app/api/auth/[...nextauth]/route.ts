@@ -1,4 +1,4 @@
-import { signInEmailPassword } from "@/auth/components/actions/auth-actions";
+import { signInEmailPassword } from "@/auth/actions/auth-actions";
 import prisma from "@/lib/prisma";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import NextAuth, { NextAuthOptions } from "next-auth"
